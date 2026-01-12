@@ -9,7 +9,9 @@
 * [📌 Project Overview](#-project-overview)
 * [🏗️ Architecture Overview](#️-architecture-overview)
 
-  * [📐 Architecture Diagram](#-architecture-diagram)
+   * [📐 Architecture Diagram](#-architecture-diagram)
+   * [🏛️ AWS Well Architected Pillars](#-aws-well-architected-pillars)
+
 * [☁️ AWS Services Used](#️-aws-services-used)
 
   * [🖥️ Amazon EC2]
@@ -24,6 +26,7 @@
 * [✅ Conclusion](#-conclusion)
 
 ---
+
 
 ## 📌 Project Overview
 
@@ -58,14 +61,19 @@ Below is a visual representation of the system architecture:
 ![Architecture Diagram](./architecture-diagram.png)
 
 
+---
 
 
+### 🏛️ AWS Well Architected Pillars
 
-* Public subnets hosting the Application Load Balancer
-* EC2 instances distributed across multiple Availability Zones
-* Auto Scaling Group for elasticity and cost control
-* Optional Multi-AZ Amazon RDS
-* Centralized monitoring with CloudWatch and SNS
+This project follows the core principles of the AWS Well-Architected Framework:
+
+- **Operational Excellence**: CloudWatch monitoring and alarms are used to observe system health and automate responses.
+- **Security**: IAM roles with least-privilege access and security groups protect infrastructure components.
+- **Reliability**: Multi-AZ deployment with Auto Scaling ensures high availability and fault tolerance.
+- **Performance Efficiency**: Application Load Balancer and Auto Scaling dynamically handle traffic fluctuations.
+- **Cost Optimization**: Auto Scaling and right-sized EC2 instances help minimize unnecessary costs.
+
 
 ---
 
@@ -109,6 +117,8 @@ Below is a visual representation of the system architecture:
 ---
 
 ## 🚀 Deployment Steps
+    This section outlines the steps required to deploy the application and provision the necessary AWS resources.
+
 
 1️⃣ **Create IAM Roles**
 
@@ -187,33 +197,6 @@ It serves as a strong foundation for more advanced cloud architectures and is we
 
 
 
-
-## 📈 Scaling & Reliability
-
-* **Horizontal scaling** via Auto Scaling Groups
-* **Health checks** via Load Balancer
-* **Multi-AZ deployments** for fault tolerance
-* **Rolling deployments** for zero-downtime updates
-
----
-
-## 🔐 Security Considerations
-
-* Least-privilege IAM roles
-* Private subnets for EC2 instances
-* Load balancer exposed to the internet
-* Encrypted storage (EBS, RDS)
-* Regular patching and AMI updates
-
----
-
-## 🧪 Monitoring & Logging
-
-* CloudWatch metrics (CPU, memory, disk)
-* CloudWatch Logs for application logs
-* Alarms for auto-scaling and alerting
-
----
 
 
 
